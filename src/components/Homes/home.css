@@ -1,0 +1,124 @@
+.container {
+    height: 100vh;
+    padding: 5rem;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+.vector-graphics {
+    filter: drop-shadow(0 40px 10px rgba(0, 0, 0, 0,3));
+    animation: vectorAnimation 1s infinite ease-in-out alternate;
+}
+
+@keyframes vectorAnimation {
+    to {
+        transform: translateY(-50px)
+    }
+    from {
+        transform: translateY(50px)
+    }
+}
+
+.brandsBanner>svg {
+    color: white;
+    font-size: 3rem;
+    transition: color 0.5s;
+overflow-y: hidden;
+    width: 100%;
+    animation: brands 5s linear infinite;
+    white-space: nowrap;
+} 
+
+.brandsBanner>svg:hover {
+    color: rgb(255, 221, 0);
+}
+
+@keyframes brands {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+.container2{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container2 video{
+    border: 1px solid rgba(0,0,0,0.18);
+    box-shadow: 0 0 10px rgba(0,0,0,0.175);
+    width: 60%;
+    border-radius: 5px;
+    outline: none;
+}
+
+@media screen and (max-width: 600px) {
+    .container2{
+        height: unset;
+        padding: 8vh 0;
+    }
+    .container2 video{
+        width: 100%;
+    }  
+        @keyframes vectorAnimation {
+            to {
+                transform: translateY(-20px)
+            }
+    
+            from {
+                transform: translateY(20px)
+            }
+        }
+}
+
+.course {
+    width: 250px;
+    margin-bottom: 1rem;
+    transition: all 0.5s;
+}
+
+.course:hover{
+    transform: translateY(-10px);
+}
+
+.btn {
+    margin: 24px;
+    animation: zoom-in-zoom-out 2s ease-in-out infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.5, 1.5);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@media screen and (min-width: 600px) { 
+    .typed-out {
+        overflow: hidden;
+            white-space: pre;
+            width: 100%;
+        animation: typing 10s steps(20, end) infinite;
+    }
+ }
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
