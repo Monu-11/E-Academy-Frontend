@@ -12,6 +12,7 @@ import {
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/actions/user';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 export const fileUploadCss = {
   cursor: 'grab',
@@ -36,6 +37,7 @@ const Registration = () => {
   const [password, setPassword] = useState('');
   const [imagePrev, setImagePrev] = useState('');
   const [image, setImage] = useState();
+  const [showPassword, setShowPassword] = useState(false); // New state for showing password
 
   const dispatch = useDispatch();
 
@@ -50,6 +52,11 @@ const Registration = () => {
       setImage(file);
     };
   };
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const submitHandler = e => {
     e.preventDefault();
     const form = {
@@ -100,10 +107,27 @@ const Registration = () => {
               id="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
+              type={showPassword ? 'text' : 'password'} // Show/hide password based on showPassword state
               placeholder="Enter your Password"
-              type="password"
               focusBorderColor="yellow.500"
+              paddingRight="4.5rem" // To accommodate the eye icon
             />
+            <Button
+              pos="absolute"
+              width={'3.5rem'}
+              marginLeft={'-57px'}
+              onClick={toggleShowPassword}
+              variant="ghost"
+              colorScheme="yellow"
+              _active={{ outline: 'none' }}
+              zIndex={'1'}
+            >
+              {showPassword ? (
+                <AiFillEyeInvisible size={'md'} />
+              ) : (
+                <AiFillEye size={'md'} />
+              )}
+            </Button>
           </Box>
           <Box marginY={'4'} style={{ width: '100%' }}>
             <FormLabel htmlFor="chooseAvatar" children="Choose Avatar" />

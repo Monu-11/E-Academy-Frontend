@@ -44,8 +44,8 @@ const Profile = ({ user }) => {
   } = useSelector(state => state.subscription);
 
   const removeFromPlaylistHandler = async id => {
-    await dispatch(removeFromPlaylist(id));
-    dispatch(loadUser());
+    dispatch(removeFromPlaylist(id));
+    await dispatch(loadUser());
   };
 
   const changeImageSubmitHandler = async (e, image) => {

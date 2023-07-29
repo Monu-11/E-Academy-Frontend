@@ -21,6 +21,6 @@ const store = configureStore({
 
 export default store;
 
-// export const server = 'https://dull-ruby-rhinoceros-wrap.cyclic.app/api/v1';
+export const server = 'https://apex-academy.onrender.com/api/v1';
 
-export const server = 'http://localhost:4000/api/v1';
+// export const server = 'http://localhost:4000/api/v1';

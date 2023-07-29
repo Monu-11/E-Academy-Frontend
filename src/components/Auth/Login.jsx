@@ -11,12 +11,18 @@ import {
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/actions/user';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // New state for showing password
 
   const dispatch = useDispatch();
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const submitHandler = e => {
     e.preventDefault();
@@ -47,11 +53,27 @@ const Login = () => {
               required
               id="password"
               value={password}
+              type={showPassword ? 'text' : 'password'}
               onChange={e => setPassword(e.target.value)}
               placeholder="Enter your Password"
-              type="password"
               focusBorderColor="yellow.500"
             />
+            <Button
+              pos="absolute"
+              width={'3.5rem'}
+              marginLeft={'-57px'}
+              onClick={toggleShowPassword}
+              variant="ghost"
+              colorScheme="yellow"
+              _active={{ outline: 'none' }}
+              zIndex={'1'}
+            >
+              {showPassword ? (
+                <AiFillEyeInvisible size={'md'} />
+              ) : (
+                <AiFillEye size={'md'} />
+              )}
+            </Button>
           </Box>
 
           <Box

@@ -8,7 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
-import cursorImage from '../../../assets/images/cursor.png';
+import cursorImage from '../../../assets/images/cursor11.png';
 import Sidebar from '../Sidebar';
 import { RiArrowDownLine, RiArrowUpLine } from 'react-icons/ri';
 import { DoughnutChart, LineChart } from './Chart';

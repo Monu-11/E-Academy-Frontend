@@ -11,7 +11,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import vg from '../../assets/images/pngwing.com.png';
+import vg from '../../assets/images/logo.png';
 import { FcGoogle } from 'react-icons/fc';
 import { ImYoutube2 } from 'react-icons/im';
 import { SiUdemy } from 'react-icons/si';
@@ -46,7 +46,7 @@ const Home = () => {
               textAlign={['center', 'left']}
               children="Find Valuable Content At Reasonable Price"
             />
-            <Link>
+            <Link to="/login">
               <Button className="btn" size={'lg'} colorScheme="yellow">
                 Enroll Now
               </Button>
